@@ -26,8 +26,7 @@
     content: "";
     background: linear-gradient(
       45deg,
-      #ed5fd5, #ffa600, #ffdf2b,
-      #ff3d2c
+       #ffa600, #FFFFFF
     );
     position: absolute;
     top: -2px;
