@@ -74,13 +74,12 @@ h1 {
 
   .background-image {
     position: absolute;
-    top: 0;
+    top: 130px;
     left: 0;
     width: 100%;
     height: 100%;
     animation: star-sky-animation 60s linear infinite;
     background-image: url("assests/stars.png");
-    background-repeat: repeat-y;
   }
 
   @keyframes star-sky-animation {
@@ -88,6 +87,6 @@ h1 {
       transform: translateY(0);
     }
     100% {
-      transform: translateY(-100%);
+      transform: translateY(-120%);
     }
 }
