@@ -31,7 +31,6 @@ body, html {
     border-color: white;
     border-radius: 15px;
     background-image: url("assests/stars.png");
-    pointer-events: none;
 }
 
 h1 {
@@ -55,7 +54,6 @@ h1 {
         margin: 10px;
         cursor: pointer;
         transition: background-color 0.3s ease;
-        pointer-events: all;
     }
 
     .buttons button:hover {
