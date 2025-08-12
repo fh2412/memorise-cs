@@ -1,63 +1,66 @@
-/* button */
+/* Modern button with subtle glow */
 .btn {
-    margin: 100px;
-    padding: 15px 40px;
-    border: none;
-    outline: none;
-    color: #FFF;
-    cursor: pointer;
-    position: relative;
-    z-index: 0;
-    border-radius: 12px;
-  }
-  .btn::after {
-    content: "";
-    z-index: -1;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background-color: #333;
-    left: 0;
-    top: 0;
-    border-radius: 10px;
-  }
-  /* glow */
-  .btn::before {
-    content: "";
-    background: linear-gradient(
-      45deg,
-       #f44a10, #FFFFFF
-    );
-    position: absolute;
-    top: -2px;
-    left: -2px;
-    background-size: 600%;
-    z-index: -1;
-    width: calc(100% + 4px);
-    height:  calc(100% + 4px);
-    filter: blur(8px);
-    animation: glowing 20s linear infinite;
-    transition: opacity .3s ease-in-out;
-    border-radius: 10px;
-    opacity: 0;
-  }
-  
-  @keyframes glowing {
-    0% {background-position: 0 0;}
-    50% {background-position: 400% 0;}
-    100% {background-position: 0 0;}
-  }
-  
-  /* hover */
-  .btn:hover::before {
-    opacity: 1;
-  }
-  
-  .btn:active:after {
-    background: transparent;
-  }
-  
-  .btn:active {
-    color: #000;
-    font-weight: bold;
-  }
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: .5rem;
+  padding: 14px 26px;
+  border: none;
+  border-radius: 12px;
+  color: #fff;
+  cursor: pointer;
+  z-index: 0;
+  font-weight: 600;
+  letter-spacing: .2px;
+  text-decoration: none;
+}
+
+.btn::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background-color: #1b1b1b;
+  border-radius: inherit;
+}
+
+/* glow */
+.btn::before {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  z-index: -2;
+  background: linear-gradient(45deg, var(--accent, #f44a10), #ffffff);
+  background-size: 600%;
+  filter: blur(10px);
+  border-radius: inherit;
+  opacity: 0;
+  transition: opacity .3s ease-in-out;
+  animation: btn-glow 18s linear infinite;
+}
+
+@keyframes btn-glow {
+  0% { background-position: 0 0; }
+  50% { background-position: 400% 0; }
+  100% { background-position: 0 0; }
+}
+
+/* hover */
+.btn:hover::before { opacity: 1; }
+.btn:active::after { background: transparent; }
+.btn:active { color: #000; }
+
+/* Variants */
+.btn-primary { --accent: #f44a10; }
+
+
+.btn-secondary { --accent: #1e3c72; color: #000; }
+.btn-secondary::after {
+  background-color: transparent;
+  border: 1px solid rgba(215,226,255,0.55);
+}
+.btn-secondary:hover::after {
+  background-color: rgba(30,60,114,0.18);
+  border-color: rgba(215,226,255,0.8);
+}
