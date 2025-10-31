@@ -12,6 +12,7 @@
   cursor: pointer;
   z-index: 0;
   font-weight: 600;
+  font-size: large;
   letter-spacing: .2px;
   text-decoration: none;
 }
